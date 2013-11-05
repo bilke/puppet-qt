@@ -8,15 +8,13 @@ class qt {
   include homebrew
   include xquartz
 
-  default: {
-    homebrew::formula { 'qt':
-      before => Package['boxen/brews/qt'],
-    }
+  homebrew::formula { 'qt':
+    before => Package['boxen/brews/qt'],
+  }
 
-    package { 'boxen/brews/qt':
-      ensure  => '4.8.5-boxen2',
-      install_options => [ '--HEAD' ],
-      require => Class['xquartz'],
-    }
+  package { 'boxen/brews/qt':
+    ensure  => '4.8.5-boxen2',
+    install_options => [ '--HEAD' ],
+    require => Class['xquartz'],
   }
 }

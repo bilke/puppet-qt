@@ -23,7 +23,8 @@ class qt {
       }
 
       package { 'boxen/brews/qt':
-        ensure  => '4.8.5-boxen1',
+        ensure  => '4.8.5-boxen2',
+        install_options => [ '--HEAD' ],
         require => Class['xquartz'],
       }
     }
